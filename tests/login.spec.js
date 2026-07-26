@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
+import { LoginPage } from '../Pages/LoginPage';
+import { InventoryPage } from '../Pages/InventoryPage';
 import users from '../data/users.json';
-import { InventoryPage } from '../pages/InventoryPage';
+
 test('QA-105 | Valid Login', async ({ page }) => {
 
     const loginPage = new LoginPage(page);
