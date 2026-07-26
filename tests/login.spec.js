@@ -1,15 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
-
-test('QA-104 | Valid Login', async ({ page }) => {
+import users from '../data/users.json';
+test('QA-105 | Valid Login', async ({ page }) => {
 
     const loginPage = new LoginPage(page);
 
     await loginPage.open();
 
     await loginPage.login(
-        'standard_user',
-        'secret_sauce'
+         users.standardUser.username,
+        users.standardUser.password
     );
 
     await expect(page).toHaveURL(/inventory/);
